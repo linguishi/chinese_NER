@@ -144,7 +144,7 @@ if __name__ == '__main__':
         'epochs': 25,
         'batch_size': 20,
         'buffer': 47000,
-        'lstm_size': 100,
+        'lstm_size': 600,
         'words': str(Path(DATADIR, 'vocab.words.txt')),
         'tags': str(Path(DATADIR, 'vocab.tags.txt')),
         'ch2vec': str(Path(DATADIR, 'ch2vec.npz'))
@@ -170,7 +170,7 @@ if __name__ == '__main__':
     estimator = tf.estimator.Estimator(model_fn, 'results/model', cfg, params)
     Path(estimator.eval_dir()).mkdir(parents=True, exist_ok=True)
     hook = tf.contrib.estimator.stop_if_no_increase_hook(
-        estimator, 'f1', 1500, min_steps=8000, run_every_secs=120)
+        estimator, 'f1', 2000, min_steps=8000, run_every_secs=120)
     train_spec = tf.estimator.TrainSpec(input_fn=train_inpf, hooks=[hook])
     eval_spec = tf.estimator.EvalSpec(input_fn=eval_inpf, throttle_secs=120)
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
