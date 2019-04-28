@@ -3,7 +3,7 @@
     "buffer": 47000,
     "ch2vec": "../data/msra/ch2vec.npz",
     "dim": 300,
-    "dropout": 0.5,
+    "dropout": 0.55,
     "epochs": 25,
     "lstm_size": 600,
     "num_oov_buckets": 1,

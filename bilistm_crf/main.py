@@ -139,7 +139,7 @@ if __name__ == '__main__':
     # Params
     params = {
         'dim': 300,
-        'dropout': 0.5,
+        'dropout': 0.55,
         'num_oov_buckets': 1,
         'epochs': 25,
         'batch_size': 20,
