@@ -37,8 +37,8 @@ pip install git+https://github.com/guillaumegenthial/tf_metrics.git
 ```
 在`{}.tags.txt`文件中，每一行为一个样本的标记
 ```text
-中 共 中 央 致 中 国 致 公 党 十 一 大 的 贺 词
-各 位 代 表 、 各 位 同 志 ：
+B-ORG I-ORG I-ORG I-ORG O B-ORG I-ORG I-ORG I-ORG I-ORG I-ORG I-ORG I-ORG O O O
+O O O O O O O O O O
 ```
 本项目中，可在`data/msra`目录下运行`build_data_format.py`得到相应的格式
 
@@ -98,7 +98,7 @@ python saved_model.py
  
  
  #### `Serve.py`的输出
- ![image]()
+ ![截图](https://github.com/linguishi/chinese_NER/blob/master/clip.png?raw=true)
  
  
  ## 参考
