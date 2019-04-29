@@ -68,7 +68,6 @@ def model_fn(features, labels, mode, params):
         params['words'], num_oov_buckets=params['num_oov_buckets'])
     with Path(params['tags']).open() as f:
         indices = [idx for idx, tag in enumerate(f) if tag.strip() != 'O']
-        # 除去'O'是为了计算准确率和召回率和F因子
         num_tags = len(indices) + 1
 
     # Word Embeddings
@@ -138,7 +137,7 @@ if __name__ == '__main__':
     # Params
     params = {
         'dim': 300,
-        'dropout': 0.55,
+        'dropout': 0.5,
         'num_oov_buckets': 1,
         'epochs': 25,
         'batch_size': 20,
